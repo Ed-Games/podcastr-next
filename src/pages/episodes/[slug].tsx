@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { format, parseISO } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import { GetStaticPaths, GetStaticProps } from 'next'
@@ -34,6 +35,11 @@ export default function Episode({episode}: EpisodeProps){
 
     return(
         <div className={styles.episode}>
+
+            <Head>
+                <title>{episode.title} | Podcastr</title>
+            </Head>
+
             <div className={styles.thumbnailContainer}>
                 <Link href="/">
                     <button type="button">
